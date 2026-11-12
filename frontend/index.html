@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI DJ Set Copilot</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <h1>AI DJ Set <span class="accent">Copilot</span></h1>
+  <span class="subtitle">100% offline · RTX 4070 · Numark Mixtrack Platinum FX</span>
+</header>
+
+<main class="layout">
+  <section class="panel controls">
+    <h2>1. Carpeta y estilo del set</h2>
+    <label>Carpeta de música
+      <input id="folderPath" type="text" placeholder="/ruta/a/mi/carpeta/de/musica" />
+    </label>
+    <label>Describe la vibra que quieres
+      <textarea id="stylePrompt" rows="4" placeholder="Hazme un set que empiece profundo y acabe reventando, con cortes agresivos, loops tensos y jugueteo con las palancas de efectos."></textarea>
+    </label>
+    <div class="actions">
+      <button id="analyzeBtn">Analizar carpeta</button>
+      <button id="planBtn" class="primary">Generar Set</button>
+    </div>
+    <div id="status" class="status"></div>
+  </section>
+
+  <section class="panel tracklist-panel">
+    <h2>2. Tracklist optimizado</h2>
+    <table id="tracklistTable">
+      <thead>
+        <tr>
+          <th>#</th><th>Pista</th><th>BPM</th><th>Pitch</th><th>Camelot</th>
+          <th>Relación</th><th>Energía</th><th>Objetivo</th><th>Calidad mezcla</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="panel transition-panel">
+    <h2>3. Transición seleccionada</h2>
+    <div id="transitionMeta" class="transition-meta">Selecciona una fila de transición en la tabla de arriba.</div>
+
+    <div class="deck-timeline">
+      <div class="deck-row deck-a">
+        <span class="deck-label">Deck A (saliente)</span>
+        <div id="timelineA" class="timeline-track"></div>
+      </div>
+      <div class="deck-row deck-b">
+        <span class="deck-label">Deck B (entrante)</span>
+        <div id="timelineB" class="timeline-track"></div>
+      </div>
+    </div>
+
+    <h3>Esquema físico — Numark Mixtrack Platinum FX</h3>
+    <div id="numarkSchematic" class="numark-schematic"></div>
+
+    <h3>Pasos de la transición</h3>
+    <ol id="stepsList" class="steps-list"></ol>
+  </section>
+</main>
+
+<script src="/static/numark_layout.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

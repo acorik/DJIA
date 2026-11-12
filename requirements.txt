@@ -1,0 +1,28 @@
+# --- Core ---
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+pydantic==2.9.2
+python-multipart==0.0.17
+
+# --- Audio DSP ---
+librosa==0.10.2.post1
+soundfile==0.12.1
+audioread==3.0.1
+numpy==1.26.4
+scipy==1.13.1
+numba==0.60.0
+
+# --- GPU acceleration (CUDA 12.1 build) ---
+# Instala con:
+#   pip install torch==2.4.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+torch==2.4.1
+torchaudio==2.4.1
+
+# --- LLM local offline (interpreta el prompt de estilo, build CUDA) ---
+# Instala con:
+#   CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python==0.3.2 --no-cache-dir
+llama-cpp-python==0.3.2
+
+# --- Utilidades ---
+tqdm==4.67.0
+orjson==3.10.11
